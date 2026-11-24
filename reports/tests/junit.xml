@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/app/phpunit.xml.dist" tests="39" assertions="72" errors="0" failures="0" skipped="0" time="0.031288">
+    <testsuite name="Unit" tests="24" assertions="28" errors="0" failures="0" skipped="0" time="0.008946">
+      <testsuite name="Nav2018\Tests\Unit\NavigationMenuTest" file="/app/tests/Unit/NavigationMenuTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.001171">
+        <testcase name="testMarksOnlyCurrentPageActive" file="/app/tests/Unit/NavigationMenuTest.php" line="13" class="Nav2018\Tests\Unit\NavigationMenuTest" classname="Nav2018.Tests.Unit.NavigationMenuTest" assertions="3" time="0.000861"/>
+        <testcase name="testMarksNothingActiveForUnknownPath" file="/app/tests/Unit/NavigationMenuTest.php" line="23" class="Nav2018\Tests\Unit\NavigationMenuTest" classname="Nav2018.Tests.Unit.NavigationMenuTest" assertions="1" time="0.000310"/>
+      </testsuite>
+      <testsuite name="Nav2018\Tests\Unit\PageCatalogTest" file="/app/tests/Unit/PageCatalogTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.000902">
+        <testcase name="testDefaultCatalogListsPagesInNavigationOrder" file="/app/tests/Unit/PageCatalogTest.php" line="12" class="Nav2018\Tests\Unit\PageCatalogTest" classname="Nav2018.Tests.Unit.PageCatalogTest" assertions="1" time="0.000332"/>
+        <testcase name="testFindsKnownPage" file="/app/tests/Unit/PageCatalogTest.php" line="19" class="Nav2018\Tests\Unit\PageCatalogTest" classname="Nav2018.Tests.Unit.PageCatalogTest" assertions="1" time="0.000277"/>
+        <testcase name="testReturnsNullForUnknownPage" file="/app/tests/Unit/PageCatalogTest.php" line="24" class="Nav2018\Tests\Unit\PageCatalogTest" classname="Nav2018.Tests.Unit.PageCatalogTest" assertions="1" time="0.000292"/>
+      </testsuite>
+      <testsuite name="Nav2018\Tests\Unit\RequestTest" file="/app/tests/Unit/RequestTest.php" tests="8" assertions="9" errors="0" failures="0" skipped="0" time="0.002979">
+        <testsuite name="Nav2018\Tests\Unit\RequestTest::testNormalizesPath" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.002344">
+          <testcase name="testNormalizesPath with data set &quot;root&quot;" file="/app/tests/Unit/RequestTest.php" line="26" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="1" time="0.000642"/>
+          <testcase name="testNormalizesPath with data set &quot;plain&quot;" file="/app/tests/Unit/RequestTest.php" line="26" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="1" time="0.000337"/>
+          <testcase name="testNormalizesPath with data set &quot;trailing slash&quot;" file="/app/tests/Unit/RequestTest.php" line="26" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="1" time="0.000312"/>
+          <testcase name="testNormalizesPath with data set &quot;query string&quot;" file="/app/tests/Unit/RequestTest.php" line="26" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="1" time="0.000339"/>
+          <testcase name="testNormalizesPath with data set &quot;fragment&quot;" file="/app/tests/Unit/RequestTest.php" line="26" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="1" time="0.000341"/>
+          <testcase name="testNormalizesPath with data set &quot;empty&quot;" file="/app/tests/Unit/RequestTest.php" line="26" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="1" time="0.000374"/>
+        </testsuite>
+        <testcase name="testUppercasesMethod" file="/app/tests/Unit/RequestTest.php" line="31" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="1" time="0.000336"/>
+        <testcase name="testFallsBackWhenServerValuesAreMissingOrInvalid" file="/app/tests/Unit/RequestTest.php" line="36" class="Nav2018\Tests\Unit\RequestTest" classname="Nav2018.Tests.Unit.RequestTest" assertions="2" time="0.000299"/>
+      </testsuite>
+      <testsuite name="Nav2018\Tests\Unit\TemplateRendererTest" file="/app/tests/Unit/TemplateRendererTest.php" tests="11" assertions="12" errors="0" failures="0" skipped="0" time="0.003895">
+        <testsuite name="Nav2018\Tests\Unit\TemplateRendererTest::testRejectsUnsafeTemplateNames" tests="7" assertions="7" errors="0" failures="0" skipped="0" time="0.002290">
+          <testcase name="testRejectsUnsafeTemplateNames with data set &quot;parent traversal&quot;" file="/app/tests/Unit/TemplateRendererTest.php" line="29" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000677"/>
+          <testcase name="testRejectsUnsafeTemplateNames with data set &quot;nested traversal&quot;" file="/app/tests/Unit/TemplateRendererTest.php" line="29" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000360"/>
+          <testcase name="testRejectsUnsafeTemplateNames with data set &quot;absolute&quot;" file="/app/tests/Unit/TemplateRendererTest.php" line="29" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000361"/>
+          <testcase name="testRejectsUnsafeTemplateNames with data set &quot;null byte&quot;" file="/app/tests/Unit/TemplateRendererTest.php" line="29" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000228"/>
+          <testcase name="testRejectsUnsafeTemplateNames with data set &quot;extension&quot;" file="/app/tests/Unit/TemplateRendererTest.php" line="29" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000240"/>
+          <testcase name="testRejectsUnsafeTemplateNames with data set &quot;trailing newline&quot;" file="/app/tests/Unit/TemplateRendererTest.php" line="29" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000216"/>
+          <testcase name="testRejectsUnsafeTemplateNames with data set &quot;empty&quot;" file="/app/tests/Unit/TemplateRendererTest.php" line="29" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000208"/>
+        </testsuite>
+        <testcase name="testDoesNotRenderExistingFileOutsideTemplateDirectory" file="/app/tests/Unit/TemplateRendererTest.php" line="36" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000782"/>
+        <testcase name="testRejectsUnknownTemplate" file="/app/tests/Unit/TemplateRendererTest.php" line="54" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000232"/>
+        <testcase name="testEscapesHtmlMetacharacters" file="/app/tests/Unit/TemplateRendererTest.php" line="61" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="1" time="0.000295"/>
+        <testcase name="testLayoutEscapesTitleAndHeading" file="/app/tests/Unit/TemplateRendererTest.php" line="66" class="Nav2018\Tests\Unit\TemplateRendererTest" classname="Nav2018.Tests.Unit.TemplateRendererTest" assertions="2" time="0.000296"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Integration" tests="8" assertions="33" errors="0" failures="0" skipped="0" time="0.003387">
+      <testsuite name="Nav2018\Tests\Integration\ApplicationTest" file="/app/tests/Integration/ApplicationTest.php" tests="8" assertions="33" errors="0" failures="0" skipped="0" time="0.003387">
+        <testsuite name="Nav2018\Tests\Integration\ApplicationTest::testRendersPageWithActiveNavigation" tests="4" assertions="20" errors="0" failures="0" skipped="0" time="0.001876">
+          <testcase name="testRendersPageWithActiveNavigation with data set &quot;home&quot;" file="/app/tests/Integration/ApplicationTest.php" line="26" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="5" time="0.000773"/>
+          <testcase name="testRendersPageWithActiveNavigation with data set &quot;two&quot;" file="/app/tests/Integration/ApplicationTest.php" line="26" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="5" time="0.000374"/>
+          <testcase name="testRendersPageWithActiveNavigation with data set &quot;three&quot;" file="/app/tests/Integration/ApplicationTest.php" line="26" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="5" time="0.000374"/>
+          <testcase name="testRendersPageWithActiveNavigation with data set &quot;four&quot;" file="/app/tests/Integration/ApplicationTest.php" line="26" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="5" time="0.000355"/>
+        </testsuite>
+        <testcase name="testUnknownPathReturnsNotFoundWithoutReflectingInput" file="/app/tests/Integration/ApplicationTest.php" line="37" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="3" time="0.000341"/>
+        <testcase name="testRejectsUnsupportedMethod" file="/app/tests/Integration/ApplicationTest.php" line="46" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="2" time="0.000316"/>
+        <testcase name="testHeadRequestHasNoBody" file="/app/tests/Integration/ApplicationTest.php" line="54" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="2" time="0.000305"/>
+        <testcase name="testEveryResponseCarriesSecurityHeaders" file="/app/tests/Integration/ApplicationTest.php" line="62" class="Nav2018\Tests\Integration\ApplicationTest" classname="Nav2018.Tests.Integration.ApplicationTest" assertions="6" time="0.000549"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Functional" tests="3" assertions="7" errors="0" failures="0" skipped="0" time="0.015064">
+      <testsuite name="Nav2018\Tests\Functional\HttpServerTest" file="/app/tests/Functional/HttpServerTest.php" tests="3" assertions="7" errors="0" failures="0" skipped="0" time="0.015064">
+        <testcase name="testServesPageOverHttpWithSecurityHeaders" file="/app/tests/Functional/HttpServerTest.php" line="55" class="Nav2018\Tests\Functional\HttpServerTest" classname="Nav2018.Tests.Functional.HttpServerTest" assertions="4" time="0.013741"/>
+        <testcase name="testServesStylesheetAllowedByPolicy" file="/app/tests/Functional/HttpServerTest.php" line="65" class="Nav2018\Tests\Functional\HttpServerTest" classname="Nav2018.Tests.Functional.HttpServerTest" assertions="2" time="0.000545"/>
+        <testcase name="testUnknownRouteReturnsNotFound" file="/app/tests/Functional/HttpServerTest.php" line="73" class="Nav2018\Tests\Functional\HttpServerTest" classname="Nav2018.Tests.Functional.HttpServerTest" assertions="1" time="0.000779"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Database" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.003891">
+      <testsuite name="Nav2018\Tests\Database\SchemaTest" file="/app/tests/Database/SchemaTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.003891">
+        <testcase name="testRejectsUnknownOutcome" file="/app/tests/Database/SchemaTest.php" line="25" class="Nav2018\Tests\Database\SchemaTest" classname="Nav2018.Tests.Database.SchemaTest" assertions="1" time="0.001140"/>
+        <testcase name="testRejectsResultForMissingRun" file="/app/tests/Database/SchemaTest.php" line="32" class="Nav2018\Tests\Database\SchemaTest" classname="Nav2018.Tests.Database.SchemaTest" assertions="1" time="0.000858"/>
+        <testcase name="testRejectsRunFinishingBeforeItStarted" file="/app/tests/Database/SchemaTest.php" line="39" class="Nav2018\Tests\Database\SchemaTest" classname="Nav2018.Tests.Database.SchemaTest" assertions="1" time="0.001048"/>
+        <testcase name="testDeletingRunCascadesToResults" file="/app/tests/Database/SchemaTest.php" line="46" class="Nav2018\Tests\Database\SchemaTest" classname="Nav2018.Tests.Database.SchemaTest" assertions="1" time="0.000844"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

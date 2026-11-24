@@ -1,0 +1,30 @@
+{
+    "name": "juanmafx/nav2018",
+    "description": "Small server-rendered PHP site demonstrating one shared navigation component across multiple pages.",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "~8.4.1 || ~8.5.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^13.4"
+    },
+    "autoload": {
+        "psr-4": { "Nav2018\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Nav2018\\Tests\\": "tests/" }
+    },
+    "config": {
+        "allow-plugins": false,
+        "optimize-autoloader": true,
+        "platform": { "php": "8.4.1" },
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse": "phpstan analyse --no-progress",
+        "test": "phpunit",
+        "test:report": "phpunit --log-junit reports/tests/junit.xml --testdox-text reports/tests/testdox.txt"
+    }
+}

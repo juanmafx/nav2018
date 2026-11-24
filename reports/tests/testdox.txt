@@ -1,0 +1,53 @@
+Application (Nav2018\Tests\Integration\Application)
+ [x] Renders page with active navigation with data set "home"
+ [x] Renders page with active navigation with data set "two"
+ [x] Renders page with active navigation with data set "three"
+ [x] Renders page with active navigation with data set "four"
+ [x] Unknown path returns not found without reflecting input
+ [x] Rejects unsupported method
+ [x] Head request has no body
+ [x] Every response carries security headers
+
+Http Server (Nav2018\Tests\Functional\HttpServer)
+ [x] Serves page over http with security headers
+ [x] Serves stylesheet allowed by policy
+ [x] Unknown route returns not found
+
+Navigation Menu (Nav2018\Tests\Unit\NavigationMenu)
+ [x] Marks only current page active
+ [x] Marks nothing active for unknown path
+
+Page Catalog (Nav2018\Tests\Unit\PageCatalog)
+ [x] Default catalog lists pages in navigation order
+ [x] Finds known page
+ [x] Returns null for unknown page
+
+Request (Nav2018\Tests\Unit\Request)
+ [x] Normalizes path with data set "root"
+ [x] Normalizes path with data set "plain"
+ [x] Normalizes path with data set "trailing slash"
+ [x] Normalizes path with data set "query string"
+ [x] Normalizes path with data set "fragment"
+ [x] Normalizes path with data set "empty"
+ [x] Uppercases method
+ [x] Falls back when server values are missing or invalid
+
+Schema (Nav2018\Tests\Database\Schema)
+ [x] Rejects unknown outcome
+ [x] Rejects result for missing run
+ [x] Rejects run finishing before it started
+ [x] Deleting run cascades to results
+
+Template Renderer (Nav2018\Tests\Unit\TemplateRenderer)
+ [x] Rejects unsafe template names with data set "parent traversal"
+ [x] Rejects unsafe template names with data set "nested traversal"
+ [x] Rejects unsafe template names with data set "absolute"
+ [x] Rejects unsafe template names with data set "null byte"
+ [x] Rejects unsafe template names with data set "extension"
+ [x] Rejects unsafe template names with data set "trailing newline"
+ [x] Rejects unsafe template names with data set "empty"
+ [x] Does not render existing file outside template directory
+ [x] Rejects unknown template
+ [x] Escapes html metacharacters
+ [x] Layout escapes title and heading
+
