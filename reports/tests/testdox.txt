@@ -9,6 +9,7 @@ Application (Nav2018\Tests\Integration\Application)
  [x] Every response carries security headers
 
 Http Server (Nav2018\Tests\Functional\HttpServer)
+ [x] Render failure returns generic server error
  [x] Serves page over http with security headers
  [x] Serves stylesheet allowed by policy
  [x] Unknown route returns not found
@@ -33,6 +34,7 @@ Request (Nav2018\Tests\Unit\Request)
  [x] Falls back when server values are missing or invalid
 
 Schema (Nav2018\Tests\Database\Schema)
+ [x] Declares foreign key at table level for mysql enforcement
  [x] Rejects unknown outcome
  [x] Rejects result for missing run
  [x] Rejects run finishing before it started

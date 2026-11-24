@@ -22,11 +22,14 @@ First versioned release, prepared in 2026 from the unversioned 2018 code.
 
 - Active-page highlighting, which could never match in the original code.
 - Empty navigation links.
+- Test-results schema foreign key, which MySQL parsed but did not enforce when declared inline.
+- `scripts/test-in-docker.sh` now regenerates `reports/tests/summary.txt` from the actual run.
 
 ### Security
 
 - Added security headers, output escaping, method restrictions, and template name validation.
 - Stopped reading the client-supplied host header.
+- Removed the `X-Powered-By` header, which disclosed the PHP version.
 
 ### Added
 

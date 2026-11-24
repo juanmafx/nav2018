@@ -12,11 +12,12 @@ CREATE TABLE test_run (
 
 CREATE TABLE test_case_result (
     id INTEGER PRIMARY KEY,
-    test_run_id INTEGER NOT NULL REFERENCES test_run (id) ON DELETE CASCADE,
+    test_run_id INTEGER NOT NULL,
     suite VARCHAR(64) NOT NULL,
     test_name VARCHAR(255) NOT NULL,
     outcome VARCHAR(16) NOT NULL CHECK (outcome IN ('passed', 'failed', 'skipped', 'error')),
     duration_ms INTEGER NOT NULL CHECK (duration_ms >= 0),
+    FOREIGN KEY (test_run_id) REFERENCES test_run (id) ON DELETE CASCADE,
     UNIQUE (test_run_id, suite, test_name)
 );
 

@@ -22,6 +22,13 @@ final class SchemaTest extends TestCase
         $this->database->exec("INSERT INTO test_run VALUES (1, '1.0.0', '8.5', '2026-01-01 00:00:00', '2026-01-01 00:00:01')");
     }
 
+    public function testDeclaresForeignKeyAtTableLevelForMysqlEnforcement(): void
+    {
+        $schema = (string) file_get_contents(dirname(__DIR__, 2) . '/db/schema.sql');
+
+        self::assertStringContainsString('FOREIGN KEY (test_run_id) REFERENCES test_run (id) ON DELETE CASCADE', $schema);
+    }
+
     public function testRejectsUnknownOutcome(): void
     {
         $this->expectException(PDOException::class);

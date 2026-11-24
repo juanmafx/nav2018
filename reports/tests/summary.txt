@@ -1,8 +1,8 @@
 Command: scripts/test-in-docker.sh
 Image: php@sha256:f324fcb4dc009ac0470a7d614cd122499dcee3ca47a9bab620fc14c0eb759ba2
-Run at (UTC): 2026-11-24T01:59:40Z
+Run at (UTC): 2026-11-24T03:01:39Z
 PHPUnit 13.4.8 by Sebastian Bergmann and contributors.
 Runtime:       PHP 8.5.13
 Configuration: /app/phpunit.xml.dist
-Time: 00:00.087, Memory: 20.00 MB
-OK (39 tests, 72 assertions)
+Time: 00:00.131, Memory: 20.00 MB
+OK (41 tests, 78 assertions)

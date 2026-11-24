@@ -2,7 +2,7 @@
 
 ## Overview
 
-nav2018 is a single-process, server-rendered PHP application with no runtime dependencies beyond PHP and the Composer autoloader.
+nav2018 is a server-rendered PHP application with no runtime dependencies beyond PHP and the Composer autoloader.
 
 ```mermaid
 flowchart LR
@@ -55,11 +55,11 @@ tests/
 ## Design decisions
 
 - **One catalog.** Routes and navigation cannot drift apart because both come from `PageCatalog`.
-- **Front controller.** Only `public/` is web-accessible, so source and templates are not directly addressable.
+- **Front controller.** When `public/` is the document root, source and templates are not directly addressable.
 - **No framework.** Four static routes do not justify a runtime dependency.
 - **No frontend/backend split.** There is no client-side application or API to separate.
 - **No runtime database.** The site has no persistent domain data; `db/schema.sql` is optional and stores test results only.
 
 ## Recommended deployment
 
-Run PHP-FPM behind a reverse proxy that terminates TLS, sets HSTS, applies rate limits, and uses `public/` as its document root.
+Run PHP-FPM behind a reverse proxy that terminates TLS, sets HSTS, applies rate limits, adds the security headers to static files, and uses `public/` as its document root.

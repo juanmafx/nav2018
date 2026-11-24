@@ -10,15 +10,17 @@ The project shows how to define site navigation once and reuse it across pages, 
 
 ## Why this project exists
 
-The 2018 version was a learning exercise: four near-identical PHP pages including a shared `nav.php`. Its highlighting logic was unfinished, because every link had an empty target and the active-page comparison could never match. This version completes that idea with a typed, tested structure.
+The 2018 version consisted of four near-identical PHP pages including a shared `nav.php`. Its highlighting logic was unfinished, because every link had an empty target and the active-page comparison could never match. This version completes that idea with a typed, tested structure.
 
 ## What it does
 
 - Serves four pages: `/`, `/section-two`, `/section-three`, and `/section-four`.
 - Renders one navigation menu and marks the current page with `aria-current="page"`.
 - Answers `GET` and `HEAD`; other methods receive `405` with an `Allow` header.
-- Answers unknown paths with `404` without reflecting the requested path.
-- Sends a strict Content Security Policy and related security headers.
+- Answers unknown paths that reach the application with `404` without reflecting the requested path.
+- Sends a strict Content Security Policy and related security headers on application responses, and removes the `X-Powered-By` header from them.
+
+Static files are served directly by the web server, so these headers must be configured there. PHP's built-in development server also answers missing paths under `/assets/` with its own `404` page, which echoes the path and carries none of these headers.
 
 It has no accounts, forms, JavaScript, cookies, sessions, or database connection.
 
@@ -64,6 +66,8 @@ The website does **not** use a database. [db/schema.sql](db/schema.sql) is an op
 sqlite3 test-results.db < db/schema.sql
 ```
 
+SQLite enforces the foreign key only on connections that run `PRAGMA foreign_keys = ON`. The schema has also been loaded on PostgreSQL 17 and MySQL 8.4, where callers must supply `id` values because the columns are not auto-generated.
+
 ## Testing
 
 With PHP extensions `dom`, `xml`, `xmlwriter`, and `pdo_sqlite`:
@@ -84,7 +88,7 @@ The latest committed results are in [reports/tests/](reports/tests/).
 
 ## Security notes
 
-Output is escaped, template names are validated, and security headers are sent on every application response. TLS, HSTS, and rate limiting belong to the deployment layer and are not provided here. See [SECURITY.md](SECURITY.md) and [docs/SECURITY_AUDIT.md](docs/SECURITY_AUDIT.md).
+Output is escaped, template names are validated, and security headers are sent on every application response. TLS, HSTS, rate limiting, and headers on static files belong to the deployment layer and are not provided here. See [SECURITY.md](SECURITY.md) and [docs/SECURITY_AUDIT.md](docs/SECURITY_AUDIT.md).
 
 ## Versioning
 
