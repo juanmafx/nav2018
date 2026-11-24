@@ -20,7 +20,7 @@ Audit date: 2026-11-23. Scope: all tracked files and the full Git history of thi
 - **XSS:** the original pages did not output request data. All dynamic output is now escaped and covered by tests.
 - **CSRF and authentication:** no forms, state changes, sessions, or accounts, so two-factor authentication and password hashing do not apply.
 - **Unsafe evaluation:** no `eval`, shell execution, or dynamic includes from user input.
-- **Secrets:** `gitleaks` 8.30.1 with `--redact` found no leaks in the branch history or working tree, and no private keys are tracked.
+- **Secrets:** `gitleaks` 8.30.1 with `--redact` found no leaks in the branch history or working tree, and no private keys are tracked. On 2026-11-24 the public history was rewritten to keep only the 2026 modernization commits; any secret that was ever published must still be treated as compromised.
 
 ## Automated checks
 

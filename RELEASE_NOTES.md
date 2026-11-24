@@ -1,21 +1,12 @@
-# Release Notes: nav2018 1.0.0
+# Release Notes: nav2018 1.0.1
 
-Status: prepared, not tagged or released.
+Version 1.0.1 is a documentation-only release. It contains no code behaviour change from 1.0.0.
 
-This is the first versioned release. It rebuilds the 2018 navigation code as a typed PHP 8.4+ application in which one page catalog drives both routing and the navigation menu.
+## Changes
 
-## Highlights
-
-- Working active-page highlighting with accessible markup.
-- A strict Content Security Policy and related response headers.
-- Automated tests and static analysis, run locally on PHP 8.4 and 8.5, with a CI workflow configured for both versions that has not yet run on GitHub.
-
-## Breaking changes
-
-- PHP 8.4 or newer is required.
-- The web server's document root must be `public/`.
-- The original `.php` page URLs no longer exist.
+- The changelog and release notes no longer describe 1.0.0 as unreleased.
+- The security audit records that on 2026-11-24 the public history was rewritten to keep only the 2026 modernization commits.
 
 ## Upgrade
 
-Run `composer install --no-dev --no-scripts --no-plugins`, then point the document root at `public/`.
+No action is needed when upgrading from 1.0.0. For the changes introduced in 1.0.0, see [CHANGELOG.md](CHANGELOG.md).
