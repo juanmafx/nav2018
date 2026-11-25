@@ -1,4 +1,4 @@
-# nav2018
+# php-shared-navigation
 
 A small server-rendered PHP 8.4+ website in which every page shares one navigation component that highlights the current page.
 
